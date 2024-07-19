@@ -13,7 +13,7 @@ export default function Search({onLocationChange}) {
     }
 
     return (
-        <div className="w-[1000px] flex justify-center gap-3 ">
+        <div className="w-[1000px] flex justify-center mt-5 gap-3">
             <input type="text"
             id="location"
             className="px-3 py-2 border border-gray-300 rounded-md w-[500px] h-[40px]"
