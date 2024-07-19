@@ -20,7 +20,7 @@ export default function Search({onLocationChange}) {
             placeholder="Search For Places"
              value={location} 
              onChange={handleChange}/>
-            <button onClick={handleclick} className="w-[140px] h-[40px] leading-6 text-[17px] bg-[#2C3333] text-[#ffffff] tracking-[0.2px] rounded-md"> search</button>
+            <button onClick={handleclick} className="w-[140px] h-[40px] leading-6 text-[17px] bg-[#8F43EE] text-[#ffffff] tracking-[0.2px] rounded-md"> search</button>
         </div>
     );
 };
