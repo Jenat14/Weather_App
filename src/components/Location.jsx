@@ -48,18 +48,17 @@ export default function Location() {
     
     return (
         <div>  
-            <div className="w-[400px] bg-[#2C3333] p-10 text-[#CBE4DE] h-[max-content] shadow-lg rounded-lg">
-                <h1 className="text-center font-bold  text-2xl">Current Weather</h1>
+            <div className="w-[400px] bg-[#8F43EE] p-10 text-[#CBE4DE] h-[max-content] shadow-lg rounded-lg">
                 {data ? (
                     <div>
+                        <h3 className="text-center font-bold  text-2xl">{data.name}</h3>
                         <p className="text-center font-medium text-md my-2">{currentDate} ,{currentTime}</p>
-                        <p className="mt-2 text-center font-medium text-xl">{data.name}</p>
+                        <h2 className="text-center mt-5 text-4xl">{data.main.temp}°C</h2>
                         <p className="mt-2 text-center font-medium text-md">{data.weather[0].description}</p>
                         <ul className="mt-5">
-                            <li className="text-center bg-[#CBE4DE] text-[#2C3333] h-[30px] rounded-md mb-2">Temperature: {data.main.temp}°C</li>
-                            <li className="text-center bg-[#CBE4DE] text-[#2C3333] h-[30px] rounded-md mb-2">Pressure: {data.main.pressure}</li>
-                            <li className="text-center bg-[#CBE4DE] text-[#2C3333] h-[30px] rounded-md mb-2">Humidity: {data.main.humidity}</li>
-                            <li className="text-center bg-[#CBE4DE] text-[#2C3333] h-[30px] rounded-md mb-2">Wind Speed: {data.wind.speed}</li>
+                            <li className="text-center mb-2">Pressure: {data.main.pressure}</li>
+                            <li className="text-center mb-2">Humidity: {data.main.humidity}</li>
+                            <li className="text-center mb-2">Wind Speed: {data.wind.speed}</li>
                         </ul>                   
                     </div>  
                 ) : (
