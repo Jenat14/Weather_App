@@ -34,7 +34,7 @@ function App() {
   }, [locationData]);
 
   return (
-    <div className="bg-[#2E4F4F] min-h-screen p-5">
+    <div className="bg-[#20262E] min-h-screen p-5">
         <div className="w-full md:w-1/3 mb-6 md:mb-0">
           <Search onLocationChange={onLocationChange} />
         </div>
@@ -42,7 +42,7 @@ function App() {
         <div className="w-full md:w-2/3 md:ml-4">
           <Location />
         </div>
-        <div className="w-full md:w-2/3 md:ml-4 pl-10">
+        <div className=" md:w-2/3 md:ml-4 pl-6">
           { data ? (
             <div>
               <p className="font-medium text-3xl text-center text-white mb-6">{data.weather[0].description}</p>
