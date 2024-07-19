@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Search from "./components/Search.jsx";
 import Location from "./components/Location.jsx";
-import Items from "./components/Items.jsx";
+import Icon from "./components/Icon.jsx";
 function App() {
+  const Items =({title,value}) =>(
+    <div className=" h-[100px] w-[350px] bg-[#8F43EE] text-[#ffffff] shadow-lg rounded-lg">
+            <h2 className="text-center p-3 text-xl font-medium">{title}</h2>
+            <p className="text-center">{value}</p>
+        </div>
+  );
   const [locationData, setLocationData] = useState(null);
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -45,15 +51,18 @@ function App() {
         <div className=" md:w-2/3 md:ml-4 pl-6">
           { data ? (
             <div>
-              <p className="font-medium text-3xl text-center text-white mb-6">{data.weather[0].description}</p>
+              <div className="flex justify-center items-center">
+                <p className="font-medium text-3xl text-center text-white">{data.weather[0].description}</p>
+                <Icon img={data.weather[0]}/>
+              </div>
               <div className="flex flex-col md:flex-row md:gap-4">
                 <div className="flex flex-col gap-4">
-                  <Items title={"Temperature"} value={data.main.temp}/>
-                  <Items title={"Pressure"} value={data.main.pressure} />
+                  <Items title="Temperature" value={data.main.temp}/>
+                  <Items title="Pressure" value={data.main.pressure} />
                 </div>
                 <div className="flex flex-col gap-4">
-                  <Items title={"Humidity"} value={data.main.humidity} />
-                  <Items title={"Wind Speed"} value={data.wind.speed} />
+                  <Items title="Humidity" value={data.main.humidity} />
+                  <Items title="Wind Speed" value={data.wind.speed} />
                 </div>
               </div>
             </div>
