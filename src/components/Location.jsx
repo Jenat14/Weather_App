@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Items from "./Items";
 export default function Location() {
     const [lat ,setLat] = useState(null);
     const [long ,setLong] = useState(null);
     const [data, setData] = useState(null);
+    const [currentDate, setCurrentDate] = useState("");
+    const [currentTime, setCurrentTime] = useState("");
+
 
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(
@@ -30,15 +32,29 @@ export default function Location() {
             }
         };
         fetchData();
+        const interval = setInterval(() => {
+            const now = new Date();
+            setCurrentDate(
+                `${now.getDate()} ${now.toLocaleString("default", {
+                  month: "short",
+                })}`
+              );
+      setCurrentTime(now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }));
+    }, 1000);
+      
+    return () => clearInterval(interval);
     }, [lat, long]);
+
+    
     return (
         <div>  
             <div className="w-[400px] bg-[#2C3333] p-10 text-[#CBE4DE] h-[max-content] shadow-lg rounded-lg">
                 <h1 className="text-center font-bold  text-2xl">Current Weather</h1>
                 {data ? (
                     <div>
-                        <p className="mt-2 text-center font-medium text-base">Location: {data.name}</p>
-                        <p className="mt-2 text-center font-medium text-xl">{data.weather[0].description}</p>
+                        <p className="text-center font-medium text-md my-2">{currentDate} ,{currentTime}</p>
+                        <p className="mt-2 text-center font-medium text-xl">{data.name}</p>
+                        <p className="mt-2 text-center font-medium text-md">{data.weather[0].description}</p>
                         <ul className="mt-5">
                             <li className="text-center bg-[#CBE4DE] text-[#2C3333] h-[30px] rounded-md mb-2">Temperature: {data.main.temp}°C</li>
                             <li className="text-center bg-[#CBE4DE] text-[#2C3333] h-[30px] rounded-md mb-2">Pressure: {data.main.pressure}</li>
