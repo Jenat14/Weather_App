@@ -48,7 +48,7 @@ function App() {
               <p className="font-medium text-3xl text-center text-white mb-6">{data.weather[0].description}</p>
               <div className="flex flex-col md:flex-row md:gap-4">
                 <div className="flex flex-col gap-4">
-                  <Items title={"Temperature"} value={data.main.temp} />
+                  <Items title={"Temperature"} value={data.main.temp}/>
                   <Items title={"Pressure"} value={data.main.pressure} />
                 </div>
                 <div className="flex flex-col gap-4">
