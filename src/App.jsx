@@ -4,7 +4,7 @@ import Location from "./components/Location.jsx";
 import Icon from "./components/Icon.jsx";
 function App() {
   const Items =({title,value,img}) =>(
-    <div className=" h-[100px] w-[350px] flex gap-4 items-center bg-[#8F43EE] text-[#ffffff] shadow-lg rounded-lg">
+    <div className=" h-[150px] w-[350px] flex gap-4 items-center bg-[#8F43EE] text-[#ffffff] shadow-lg rounded-lg">
           <img  className="h-[40%] ml-6" src={img}></img>
             <div>
               <h2 className="text-center px-5 text-xl">{title}</h2>

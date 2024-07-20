@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { tailChase } from 'ldrs'
+tailChase.register()
+
 import Icon from "./Icon";
 export default function Location() {
     const Comp =({title,data}) =>(
@@ -56,7 +59,7 @@ export default function Location() {
     return (
         <div>  
             <div className="w-[400px] bg-[#8F43EE] p-10 text-[#ffffff] h-[max-content] shadow-lg rounded-lg">
-                {data ? (
+                {data? (
                     <div>
                         <h3 className="text-center font-bold  text-2xl">{data.name}</h3>
                         <p className="text-center font-medium text-md my-2">{currentDate} ,{currentTime}</p>
@@ -67,14 +70,19 @@ export default function Location() {
                             <Comp title="Pressure"
                             data= {data.main.pressure}/>
                             <Comp title="Humidity"
-                            data={data.main.pressure}/>
+                            data={data.main.humidity}/>
                             <Comp title="Wind Speed"
                             data={data.wind.speed}/>
                         </div>                 
                     </div>  
                 ) : (
-                    <div className="flex place-content-center mt-10">
-                        <p>Loading...</p>
+                    <div className="flex place-content-center mt-10">     
+                        <l-tail-chase
+                        size="40"
+                        speed="1.75" 
+                        color="white" 
+                        >
+                        </l-tail-chase>
                     </div>
                 )}
             </div>
