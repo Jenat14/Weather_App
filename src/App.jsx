@@ -3,10 +3,13 @@ import Search from "./components/Search.jsx";
 import Location from "./components/Location.jsx";
 import Icon from "./components/Icon.jsx";
 function App() {
-  const Items =({title,value}) =>(
-    <div className=" h-[100px] w-[350px] bg-[#8F43EE] text-[#ffffff] shadow-lg rounded-lg">
-            <h2 className="text-center p-3 text-xl font-medium">{title}</h2>
-            <p className="text-center">{value}</p>
+  const Items =({title,value,img}) =>(
+    <div className=" h-[100px] w-[350px] flex gap-4 items-center bg-[#8F43EE] text-[#ffffff] shadow-lg rounded-lg">
+          <img  className="h-[40%] ml-6" src={img}></img>
+            <div>
+              <h2 className="text-center px-5 text-xl">{title}</h2>
+              <p className="text-center text-3xl font-medium">{value}</p>
+            </div>
         </div>
   );
   const [locationData, setLocationData] = useState(null);
@@ -56,13 +59,13 @@ function App() {
                 <Icon img={data.weather[0]}/>
               </div>
               <div className="flex flex-col md:flex-row md:gap-4">
-                <div className="flex flex-col gap-4">
-                  <Items title="Temperature" value={data.main.temp}/>
-                  <Items title="Pressure" value={data.main.pressure} />
+                <div className="flex flex-col gap-6">
+                  <Items title="Temperature" value={data.main.temp} img="src\assets\temperature.png"/>
+                  <Items title="Pressure" value={data.main.pressure} img="src\assets\pressure.png"/>
                 </div>
-                <div className="flex flex-col gap-4">
-                  <Items title="Humidity" value={data.main.humidity} />
-                  <Items title="Wind Speed" value={data.wind.speed} />
+                <div className="flex flex-col gap-6">
+                  <Items title="Humidity" value={data.main.humidity} img="src\assets\humidity.png"/>
+                  <Items title="Wind Speed" value={data.wind.speed} img="src\assets\wind.png"/>
                 </div>
               </div>
             </div>
