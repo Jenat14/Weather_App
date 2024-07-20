@@ -61,7 +61,7 @@ export default function Location() {
                         <h3 className="text-center font-bold  text-2xl">{data.name}</h3>
                         <p className="text-center font-medium text-md my-2">{currentDate} ,{currentTime}</p>
                         <Icon img={data.weather[0]}/>
-                        <h2 className="text-center mt-5 text-4xl">{data.main.temp}°C</h2>
+                        <h2 className="text-center mt-5 font-bold text-4xl">{data.main.temp}°C</h2>
                         <p className="mt-2 text-center font-medium text-md">{data.weather[0].description}</p>
                         <div className="flex justify-evenly mt-4 width-[50px]">
                             <Comp title="Pressure"
