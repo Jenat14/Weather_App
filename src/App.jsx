@@ -60,12 +60,12 @@ function App() {
               </div>
               <div className="flex flex-col md:flex-row md:gap-4">
                 <div className="flex flex-col gap-6">
-                  <Items title="Temperature" value={data.main.temp} img="./src/assets/temperature.png"/>
-                  <Items title="Pressure" value={data.main.pressure} img="./src/assets/pressure.png"/>
+                  <Items title="Temperature" value={data.main.temp} img="./assets/temperature.png"/>
+                  <Items title="Pressure" value={data.main.pressure} img="./assets/pressure.png"/>
                 </div>
                 <div className="flex flex-col gap-6">
-                  <Items title="Humidity" value={data.main.humidity} img="./src/assets/humidity.png"/>
-                  <Items title="Wind Speed" value={data.wind.speed} img="./src/assets/wind.png"/>
+                  <Items title="Humidity" value={data.main.humidity} img="./assets/humidity.png"/>
+                  <Items title="Wind Speed" value={data.wind.speed} img="./assets/wind.png"/>
                 </div>
               </div>
             </div>
